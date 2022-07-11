@@ -1,0 +1,109 @@
+﻿Multisorting 
+
+
+#include <iostream>
+#include<algorithm>
+using namespace std;
+struct student
+{
+  int id;
+  int roll_no;
+  char name[50];
+  int clas;
+
+
+  void getdetails ()
+  {
+    cout << "Enter the id of student " << endl;
+    cin >> id;
+    cout << "Enter the rol_no of student " << endl;
+    cin >> roll_no;
+    cout << "Enter the name of student " << endl;
+    cin >> name;
+    cout << "Enter the class of student " << endl;
+    cin >> clas;
+  }
+
+  void printdetails ()
+  {
+    cout << "The detils of student is "<<" id "<<id<<" roll_no "<<roll_no<<" name "<<name<<" class "<<clas<<endl;
+  }
+};
+
+bool
+compareTwoStudents1 (student a, student b)
+{
+  if (a.id != b.id)
+    {
+      return a.id <b.id;
+    }
+}
+
+bool
+compareTwoStudents2 (student a, student b)
+{
+  if (a.roll_no != b.roll_no)
+    {
+      return a.roll_no <b.roll_no;
+    }
+}
+
+bool
+compareTwoStudents3 (student a, student b)
+{
+  if (a.name != b.name)
+    {
+      return a.name < b.name;
+    }
+}
+
+bool
+compareTwoStudents4 (student a, student b)
+{
+  if (a.clas != b.clas)
+    {
+      return a.clas < b.clas;
+    }
+}
+
+int
+main ()
+{
+  int n;
+  cout << "Enter the no. of students ";
+  cin >> n;
+  student s[n];
+  for (int i = 0; i < n; i++)
+    {
+
+      s[i].getdetails ();
+      
+
+    }
+  char val;
+  cout << "Enter the val 1,2,3,4";
+  cin >> val;
+  switch (val)
+    {
+    case '1':
+      sort(s, s + n, compareTwoStudents1);
+      break;
+    case '2':
+      sort(s, s + n, compareTwoStudents2);
+      break;
+    case '3':
+      sort(s, s + n, compareTwoStudents3);
+      break;
+    case '4':
+      sort(s, s + n, compareTwoStudents4);
+      break;
+    default:
+      cout << "val is not correct ";
+      break;
+    }
+    cout<<"After sorting:"<<endl;
+for(int i=0;i<n;i++){
+    s[i].printdetails ();
+}
+  return 0;
+}

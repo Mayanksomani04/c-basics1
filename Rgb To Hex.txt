@@ -1,0 +1,31 @@
+﻿Rgb To Hex
+#include <iostream>
+using namespace std;
+int decimaltohex(int num){
+    int rem,i=0;
+    char res[100];
+    while(num>0){
+        rem=num%16;
+        if(rem<10){
+            res[i]=rem+48;
+        }else{
+           res[i]=rem+55; 
+        }
+        i++;
+        num=num/16;
+    }
+    for(int j=i-1;j>=0;j--){
+        cout<<res[j];
+    }
+}
+
+int main(){
+int r,g,b;
+
+cout<<"Enter the value of red green and blue from 0 to 255 ";
+cin>>r>>g>>b;
+cout<<"The hex value for given rgb is ";
+decimaltohex(r);
+decimaltohex(g);
+decimaltohex(b);
+}

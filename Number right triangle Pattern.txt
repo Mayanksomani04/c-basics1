@@ -1,0 +1,21 @@
+﻿Number right triangle Pattern
+#include<iostream>
+using namespace std;
+int main()
+{
+int n;
+cout<<"enter the number ";
+cin>>n;
+int count=0;
+for(int i=n;i>0;i--){
+    count=count+i;
+} 
+for(int i=0;i<n;i++){
+    for(int j=n;j>i;j--){
+        cout<<count;
+        count--;
+    }
+    cout<<endl;
+} 
+
+}

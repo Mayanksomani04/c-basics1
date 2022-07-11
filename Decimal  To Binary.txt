@@ -1,0 +1,21 @@
+﻿ Decimal  To Binary 
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int num,rem;
+    cout<<"Enter a DECIMAL number ";
+    cin>>num;
+    int i=1,ans=0;
+    while(num>0){
+        rem=num%2;
+        num=num/2;
+        ans=ans+rem*i;
+        i=i*10;
+        
+    }
+    cout<<"The answer in Binary is ";
+    cout<<ans;
+    return 0;
+}

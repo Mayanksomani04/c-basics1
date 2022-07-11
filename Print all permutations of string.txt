@@ -1,0 +1,31 @@
+﻿Print all permutations of string
+
+#include <iostream>
+using namespace std;
+int permute(string a,int left,int right){
+    if(left==right){
+        cout<<a<<endl;
+    }else{
+        int temp;
+        for(int i=left;i<=right;i++){
+            
+             temp = a[left];  
+            a[left] = a[i];  
+            a[i] = temp;  
+            permute(a, left+1, right); 
+            temp = a[left];  
+            a[left] = a[i];  
+            a[i] = temp;  
+        }
+    }
+    return 0;
+}
+int main()
+{
+    string s;
+    cout<<"Enter the pattern ";
+    cin>>s;
+   int n=s.size();
+    permute(s,0,n-1);
+    return 0;
+}

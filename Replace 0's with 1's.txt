@@ -1,0 +1,30 @@
+﻿Replace all 0’s with 1’s
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int n,n1=0;
+   cout<<"Enter the no. u want to  enter ";
+   cin>>n;
+   if(n==0){
+       n1=1;
+   }
+  while(n>0){
+      int rem=n%10;
+      if(rem==0){
+          rem=1;
+      }
+      n=n/10;
+      n1=n1*10+rem;
+  }
+  n=0;
+       while(n1>0){
+           int rem1=n1%10;
+      n=n*10+rem1;
+      n1=n1/10;
+       }
+   cout<<n;
+    return 0;
+}

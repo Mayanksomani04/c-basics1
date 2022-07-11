@@ -1,0 +1,20 @@
+﻿Automorphic number
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int num,count=0;
+    cin>>num;
+    int square=num*num;
+    while(num>0){
+        if(square%10!=num%10){
+           count++; 
+        }
+        square=square/10;
+        num=num/10;
+    }
+    count==0?cout<<"It is Automorphic number":cout<<"It is not Automorphic number";
+    return 0;
+}

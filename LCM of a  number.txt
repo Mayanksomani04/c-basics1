@@ -1,0 +1,30 @@
+﻿LcM of a Number
+
+#include <iostream>
+
+using namespace std;
+
+int
+main ()
+{
+  int a, b;
+  cout << "Enter the number a and b ";
+  cin >>a>>b;
+  int min;
+  if(a-b>0){
+      min=a;
+  }else{
+      min=b;
+  }
+  while (min > 0){
+      if(a%min==0&&b%min==0){
+        //  cout<<min;
+         break;
+      }
+      min--;
+    }
+ cout << "The hcf of the number a and b is "<<min<<endl;
+ cout<<"Lcm of a and b is "<<(a*b)/min;
+  return 0;
+}
+  

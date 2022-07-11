@@ -1,0 +1,25 @@
+﻿Capitalize the first and last character of string
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    string str;
+    cout<<"enter the String"<<endl;
+    getline(cin,str);
+    int length;
+    length=str.length();
+    for(int i=0;i<length;i++){
+    if(i==0||i==(length-1)){
+    str[i]=toupper(str[i]);
+    }
+    else 
+    if(str[i]==' ')
+    {
+    str[i-1]=toupper(str[i-1]);
+        str[i+1]=toupper(str[i+1]);
+    }
+     }
+
+    cout<<str;
+}

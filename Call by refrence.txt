@@ -1,0 +1,21 @@
+﻿Call by refrence
+#include <iostream>
+
+using namespace std;
+
+int main(){
+   int a = 100;
+   int b = 200;
+   cout<<"the values before swaping is "<<a<<" "<<b<<endl;
+   swap(a,b);
+   cout<<"the values after swaping is "<<a<<" "<<b<<endl;
+    return 0;
+}
+int swap(int *x,int *y){
+    int temp;
+    temp=*x;
+    *x=*y;
+    *y=temp;
+   return 0;
+}
+

@@ -1,0 +1,78 @@
+﻿
+Statistics mean mode median
+#include <iostream>
+#include<algorithm>
+using namespace std;
+void mean(int arr[],int num){
+    int sum = 0;
+   for(int i = 0; i<num; i++) {
+      sum += arr[i];
+   }
+   cout<<"The mean of the given observation is "<<(float)sum/num;
+}
+void mode(int arr[],int num){
+     int maxcount=0;
+  int max_freq,l=0;
+  for(int i=0;i<num;i++){
+    int count=0;
+    for(int j=0;j<num;j++){
+      if(arr[i] == arr[j]){
+        count++;
+    }
+    }
+    if(count>maxcount)
+    {
+      maxcount=count;
+      max_freq = arr[i];
+    }
+     if(count==1){
+         l++;
+     }
+  }
+  l>=num?cout<<"No mode for given observations ":cout<<" The mode of the given observation is "<< max_freq;
+}
+void meadian(int arr[],int num){
+     num%2==0 ?cout<<" The median of the given observation is "<<arr[num/2] : cout<<" The median of the given observation is "
+     <<(arr[(num - 1) / 2] + arr[num / 2]) / 2.0;
+}
+
+
+int main(){
+    int num;
+    cout<<"Enter the size of array ";
+    cin>>num;
+    int arr[num];
+    cout<<"Enter the elements of array ";
+    for(int i=0;i<num;i++){
+        cin>>arr[i];
+    }
+    char val;
+    cout<<"Enter 'a' for mean "<<endl;
+     cout<<"Enter 'b' for mode "<<endl;
+      cout<<"Enter 'c' for meadian "<<endl;
+      cout<<"Enter 'd' for meadian "<<endl;
+       
+        cin>>val;
+    switch (val)
+    {
+    case 'a':
+      mean(arr,num);
+      break;
+    case 'b':
+      mode(arr,num);
+      break;
+    case 'c':
+      meadian(arr,num);
+      break;
+      case 'd':
+      mean(arr,num);
+      cout<<endl;
+      mode(arr,num);
+      cout<<endl;
+      meadian(arr,num);
+      break;
+      default:
+      cout << "val is not correct ";
+      break;
+    }
+}

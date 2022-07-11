@@ -1,0 +1,16 @@
+﻿Vowels to Uppercase
+#include<iostream>
+using namespace std;
+int main(){
+  string s;
+  cout<<"Enter the string ";
+   getline(cin,s);
+  int length;
+    length=s.length();
+    for(int i=0;i<length;i++){
+  if(s[i]== 'a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'){
+      s[i]=toupper(s[i]);
+  }
+    }
+  cout<<s<<endl;
+  }

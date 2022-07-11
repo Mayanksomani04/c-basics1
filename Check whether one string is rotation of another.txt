@@ -1,0 +1,30 @@
+﻿Check whether one string is rotation of another
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+  
+   string s,s2;
+   cout<<"Enter the string s1 "; 
+   
+       getline(cin,s);
+   
+    cout<<"Enter the string s2 "; 
+  // cin.ignore(numeric_limits<streamsize>::max(), '\n');
+   
+       getline(cin,s2);
+    reverse(s2.begin(),s2.end());
+   cout<<" the elements of string after matching is "; 
+   if(s==s2){
+        cout<<"it is true";
+    }
+    else{
+        cout<<"it is not true";
+    }
+   
+    return 0;
+}
+  

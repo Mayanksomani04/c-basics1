@@ -1,0 +1,23 @@
+﻿write a program to reverse the digits a number using pointers.
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int num;
+    cout<<"Enter the number ";
+    cin>>num;
+    int rev=0;
+    int *pn,*pr;
+    pn = & num ;
+    pr = & rev ;
+    while(num>0){
+        int rem =(*pn)%10;
+        *pr=(*pr*10)+rem;
+        *pn=(*pn)/10;
+    }
+    cout<<rev;
+      return 0;
+    }
+

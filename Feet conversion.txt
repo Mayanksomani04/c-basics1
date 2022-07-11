@@ -1,0 +1,56 @@
+﻿
+Feet conversion 
+#include <iostream>
+#include<algorithm>
+using namespace std;
+void inches(float num){
+    cout<<num<<"  feet in inches is "<<12*num<<endl;
+}
+void centimeter(float num){
+     cout<<num<<" feet in centimeter is "<<30.48*num<<endl;
+}
+void meter(float num){
+     cout<<num<<" feet in meter is "<<.3048*num<<endl;
+}
+void mile(float num){
+     cout<<num<<" feet in mile is "<<.00019*num<<endl;
+}
+void yard(float num){
+     cout<<num<<" feet in yard is "<<.33333*num<<endl;
+}
+
+int main(){
+    cout<<"Feet conversion "<<endl;
+    float num;
+    cout<<"Enter the value You want to convert in feet ";
+    cin>>num;
+    char val;
+    cout<<"Enter 'a' for conversion to inc "<<endl;
+     cout<<"Enter 'b' for conversion to centimeter "<<endl;
+      cout<<"Enter 'c' for conversion to meter "<<endl;
+       cout<<"Enter 'd' for conversion to mile "<<endl;
+        cout<<"Enter 'e' for conversion to yard "<<endl;
+        cin>>val;
+    switch (val)
+    {
+    case 'a':
+      inches(num);
+      break;
+    case 'b':
+      centimeter(num);
+      break;
+    case 'c':
+      meter(num);
+      break;
+      case 'd':
+      mile(num);
+      break;
+      case 'e':
+      yard(num);
+      break;
+    
+    default:
+      cout << "val is not correct ";
+      break;
+    }
+}

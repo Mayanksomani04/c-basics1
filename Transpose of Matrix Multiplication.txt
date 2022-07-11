@@ -1,0 +1,34 @@
+﻿Transpose of Matrix Multiplication 
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int arr[50][50],trans[50][50],i,j;
+    int row,col;
+        cout<<"Enter row and col of matrix ";
+    cin>>row>>col;
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            cout << "Enter element a" << i + 1 << j + 1 << ": ";
+            cin>>arr[i][j];
+          }
+    }
+    //transpose of matrix
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            trans[j][i]=arr[i][j];
+         }
+    }
+    //perform multi
+    int multi[50][50];
+    for(int i=0;i<row;i++){
+        for(int j=0;j<row;j++){
+            int sum = 0;
+            for(int k=0;k<col;k++){
+                sum+=arr[i][k]*trans[k][j];
+            }
+            multi[i][j] = sum;
+            cout<< multi[i][j]<<" ";
+         }
+         cout<<endl;
+    }
+}

@@ -1,0 +1,15 @@
+﻿Character is Alphabet or not 
+
+#include<iostream>
+using namespace std;
+int main(){
+    char alphabet;
+    cout<<"enter the Character"<<endl;
+    cin>>alphabet;
+    if(alphabet>='a' && alphabet<='z' || alphabet>='A'&& alphabet>='Z'){
+        cout<<alphabet<<" is a Charcter ";
+    }
+    else{
+        cout<<alphabet<<" is not a character";
+    }
+}

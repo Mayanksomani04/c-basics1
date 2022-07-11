@@ -1,0 +1,65 @@
+﻿spiralprint
+#include<iostream>
+using namespace std;
+
+void spiralprint(int a[][100],int m,int n){
+	int startrow=0;
+	int startcol=0;
+	int endrow=n-1;
+	int endcol=m-1;
+	int i;
+
+
+	while(startrow<=endrow and startcol<=endcol){
+		//start row
+		for(i=startcol;i<=endcol;i++){
+			cout<<a[startrow][i]<<" ";
+		}
+		startrow++;
+
+		//end column
+		for(i=startrow;i<=endrow;i++){
+			cout<<a[i][endcol]<<" ";
+		}
+		endcol--;
+
+		//end row
+		if(startrow<endrow){
+		for(i=endcol;i>=startcol;i--){
+			cout<<a[endrow][i]<<" ";
+		}
+		endrow--;
+		}
+
+		//start column
+		if(startcol<endcol){
+		for(i=endrow;i>=startrow;i--){
+			cout<<a[i][startcol]<<" ";
+		}
+		startcol++;
+	    }
+	}
+	
+}
+
+
+int main(){
+	int m,n;
+	cout<<"size of array :";
+	cin>>m>>n;
+	int a[100][100],i,j;
+	for(i=0;i<n;i++){
+		for(j=0;j<m;j++){
+			cin>>a[i][j];
+		}
+	}
+	cout<<"array  is :"<<endl;	
+	for(i=0;i<n;i++){
+		for(j=0;j<m;j++){
+			cout<<a[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	spiralprint(a,m,n);
+
+}

@@ -1,0 +1,46 @@
+﻿Quick sort
+#include <iostream>
+using namespace std;
+int QuickSort(int a[], int beg, int end){  
+    int i=beg;int j=i+1;
+    if(beg < end){
+       while(j <= end){
+            if(a[i]>=a[j]){
+            int temp;
+            temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+            i++;
+            j++;
+        }
+       else{
+        i=j;
+        j++;
+        }
+       }
+    
+        QuickSort(a,beg,i-1);
+        QuickSort(a,i+1,end);
+    }
+    return 0;
+}
+     
+
+int main()
+{
+  int n,i;
+   cout<<"Enter the size of array ";
+   cin>>n;
+   int a[n];
+   cout<<"Enter the elements of array "; 
+   for( i=0;i<n;i++){
+       cin>>a[i];
+   }  
+   QuickSort(a,0,n - 1);
+   cout<<"The elements of array after sorting is ";
+   for( i=0;i<n;i++){
+       cout<<a[i]<<" ";
+   } 
+}
+
+

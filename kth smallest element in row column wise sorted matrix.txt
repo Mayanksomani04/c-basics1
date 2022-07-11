@@ -1,0 +1,64 @@
+﻿//kth smallest element in row column wise sorted matrix
+#include <iostream>
+#include<algorithm>
+using namespace std;
+int kthSmallest(int arr[100][100],int row,int col,int k){
+  int a[row*col];
+  int v = 0;
+  for(int i = 0; i < row; i++){
+    for(int j = 0; j < col; j++){
+      a[v] = arr[i][j];
+      v++;
+    }
+  }
+  sort(a, a + (row*col));
+  int result = a[k - 1];
+  return result;
+}
+int main(){
+  int row,col;
+  cout<<"Enter the value of row and col ";
+  cin>>row>>col;
+  int arr[100][100];
+  cout<<"Enter the values of matrix ";
+  for(int i=0;i<row;i++){
+      for(int j=0;j<col;j++){
+          cin>>arr[i][j];
+      }
+  }
+  int k;
+  cout<<"Enter the kthSmallest value to search ";
+  cin>>k;
+  int res = kthSmallest(arr,row,col, k);
+  cout<<res;
+    return 0;
+}
+
+
+// ??for sorted matrix
+// #include <iostream>
+// #include<algorithm>
+// using namespace std;
+// int main(){
+//   int row,col;
+//   cout<<"Enter the value of row and col ";
+//   cin>>row>>col;
+//   int arr[100][100];
+//   cout<<"Enter the values of matrix ";
+//   for(int i=0;i<row;i++){
+//       for(int j=0;j<col;j++){
+//           cin>>arr[i][j];
+//       }
+//   }
+//   int k,count;
+//   cout<<"Enter the kthSmallest value to search ";
+//   cin>>k;
+// for(int i=0;i<row;i++){
+//       for(int j=0;j<col;j++){
+//           if(count==k-1){
+//               cout<<arr[i][j];
+//           }
+//       count++;
+//       }
+// }
+// }
